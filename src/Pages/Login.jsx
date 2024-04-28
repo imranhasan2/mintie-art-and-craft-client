@@ -1,10 +1,17 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { signInWithPopup } from "firebase/auth";
+import auth from "../Firebase/firebase.config";
+import Swal from "sweetalert2";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
 
-    const { signIn, } = useContext(AuthContext)
+    const { signIn, } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider;
+    const githubProvider = new GithubAuthProvider;
 
     const handleLogin = e => {
         e.preventDefault()
@@ -23,6 +30,45 @@ const Login = () => {
                 console.error(error)
             })
     }
+
+    const handleGoogleSignIn = (e) => {
+        e.preventDefault()
+        signInWithPopup(auth,googleProvider)
+        .then(result =>{
+            console.log(result.user);
+            Swal.fire({
+                title: 'Success!',
+                text: 'Login SuccessFully',
+                icon: 'Success',
+                confirmButtonText: 'ok'
+            })
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+
+    }
+
+    const handleGithubSignIn = (e) => {
+        e.preventDefault()
+        signInWithPopup(auth,githubProvider)
+        .then(result =>{
+            console.log(result.user);
+            Swal.fire({
+                title: 'Success!',
+                text: 'Login SuccessFully',
+                icon: 'Success',
+                confirmButtonText: 'ok'
+            })
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+
+    }
+
+
+
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col ">
@@ -52,8 +98,13 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
+                        <div className="space-y-2">
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline">Google Sign In</button>
+                            <button onClick={handleGithubSignIn} className="btn btn-outline ml-4">GitHub Sign In</button>
+                        </div>
+                        <p>Don't Have an Account?<Link to="/register" className="text-blue-500">Register</Link></p>
                     </form>
-                    
+
                 </div>
             </div>
         </div>
