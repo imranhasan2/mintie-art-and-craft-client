@@ -1,30 +1,34 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Header = () => {
 
+    const { user, logOut } = useContext(AuthContext)
+
     const navbar = <>
-        <li><NavLink to='/' style={({ isActive}) => {
+        <li><NavLink to='/' style={({ isActive }) => {
             return {
                 fontWeight: isActive ? "bold" : "",
-                backgroundColor: isActive ? "green" : "black",
+                backgroundColor: isActive ? "green" : "",
             };
         }}>Home</NavLink></li>
         <li><NavLink to='art'
-         style={({ isActive}) => {
-            return {
-                fontWeight: isActive ? "bold" : "",
-                backgroundColor: isActive ? "green" : "",
-            };
-        }}>All Art & craft Items</NavLink></li>
+            style={({ isActive }) => {
+                return {
+                    fontWeight: isActive ? "bold" : "",
+                    backgroundColor: isActive ? "green" : "",
+                };
+            }}>All Art & craft Items</NavLink></li>
         <li><NavLink to='item'
-         style={({ isActive}) => {
-            return {
-                fontWeight: isActive ? "bold" : "",
-                backgroundColor: isActive ? "green" : "",
-            };
-        }}>Add Craft Item</NavLink></li>
-        <li><NavLink to="list"  style={({ isActive}) => {
+            style={({ isActive }) => {
+                return {
+                    fontWeight: isActive ? "bold" : "",
+                    backgroundColor: isActive ? "green" : "",
+                };
+            }}>Add Craft Item</NavLink></li>
+        <li><NavLink to="list" style={({ isActive }) => {
             return {
                 fontWeight: isActive ? "bold" : "",
                 backgroundColor: isActive ? "green" : "",
@@ -54,7 +58,29 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                {user ?
+                   <div className="relative flex gap-3">
+                   {/* Render user's photo with a fallback image */}
+                   <img src={user?.photoURL || "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small/beautiful-latin-woman-avatar-character-icon-free-vector.jpg"} alt="User" className="w-10 h-10 rounded-full cursor-pointer" />
+               
+                   {/* Render display name on hover */}
+                   <span className="absolute top-0 left-full ml-2 bg-white p-1 rounded-md opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                       {user.displayName}
+                   </span>
+               
+                   {/* Render logout button */}
+                   <button className="bg-green-500 px-3 py-1 rounded-xl" onClick={logOut}>
+                       LogOut
+                   </button>
+               </div>
+               
+                    : <div>
+                        <Link to='/login' className="btn bg-red-500 text-white mr-5">Login</Link>
+                        <Link to="/register" className="btn bg-blue-500 text-white">Register</Link>
+
+                    </div>
+
+                }
             </div>
         </div>
     );
