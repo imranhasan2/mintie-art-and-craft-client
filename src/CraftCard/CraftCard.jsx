@@ -1,15 +1,13 @@
-import ViewDetails from "../ViewDetails/ViewDetails";
+import { Link } from "react-router-dom";
+
 
 
 const CraftCard = ({ craft }) => {
     console.log(craft)
-    const {_id, photo, name, description, price } = craft;
+    const { _id, photo, name, description, price } = craft;
 
 
-    const handleViewPage =(_id) =>{
-        console.log(_id)
-        
-    }
+
     return (
         <div className="card w-96 bg-base-100 shadow-xl p-4 rounded-lg">
             <figure>
@@ -20,7 +18,9 @@ const CraftCard = ({ craft }) => {
                 <p className="text-sm text-gray-700 mb-4">{description}</p>
                 <p className="text-lg font-bold text-green-700">${price}</p>
                 <div className="card-actions flex justify-end">
-                    <button onClick={() => handleViewPage (_id,<ViewDetails ></ViewDetails>)} className="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md  ">View Details</button>
+                    <Link to={`/viewDetails/${_id}`}>
+                        <button className="btn btn-primary bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md  ">View Details</button>
+                    </Link>
                 </div>
             </div>
         </div>

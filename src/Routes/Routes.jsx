@@ -7,6 +7,7 @@ import Homes from "../Pages/Homes";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Form from "../Form/Form";
+import ViewDetails from "../ViewDetails/ViewDetails";
 
 
 
@@ -34,6 +35,11 @@ import Form from "../Form/Form";
             },{
                 
             },
+            {
+                path:'/viewDetails/:id',
+                element:<ViewDetails></ViewDetails>,
+                loader:({params}) => fetch(`http://localhost:5000/craft/${params.id}`)
+            }
 
         ]
     },
