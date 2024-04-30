@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 const CraftCard = ({ craft }) => {
-    console.log(craft)
+   
     const { _id, photo, name, description, } = craft;
 
 

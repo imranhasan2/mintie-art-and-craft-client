@@ -5,7 +5,7 @@ const ArtViewDetails = () => {
 
     const loadData = useLoaderData()
 
-    const { image, itemName, subcategoryName, Short_description, Price, Rating, Customization, processing_time, Stock_Status, email } = loadData
+    const { image, itemName, subcategoryName, Short_description, Price, Rating, Customization, processing_time, Stock_Status,  } = loadData
     return (
         <div className="flex justify-center items-center h-screen bg-base-200 font-serif">
             <div className="flex flex-col lg:flex-row bg-white p-8 rounded-lg shadow-xl">
