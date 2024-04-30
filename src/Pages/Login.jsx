@@ -55,7 +55,7 @@ const Login = () => {
         .then(result =>{
             console.log(result.user);
             Swal.fire({
-                title: 'Success!',
+                title: 'Success',
                 text: 'Login SuccessFully',
                 icon: 'Success',
                 confirmButtonText: 'ok'

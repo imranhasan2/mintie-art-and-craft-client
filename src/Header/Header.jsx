@@ -21,7 +21,7 @@ const Header = () => {
                     backgroundColor: isActive ? "green" : "",
                 };
             }}>All Art & craft Items</NavLink></li>
-        <li><NavLink to='item'
+        <li><NavLink to='addCraftItem'
             style={({ isActive }) => {
                 return {
                     fontWeight: isActive ? "bold" : "",
