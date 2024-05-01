@@ -12,6 +12,7 @@ import AddCraftItem from "../Pages/AddCraftItem";
 import Protected from "../Protected/Protected";
 import AllArtAndCraftItem from "../Pages/AllArtAndCraftItem";
 import ArtViewDetails from "../Pages/ArtViewDetails";
+import MyArtAndCraftList from "../Pages/MyArtAndCraftList";
 
 
 
@@ -55,7 +56,13 @@ const router = createBrowserRouter([
                 element: <Protected>
                     <ArtViewDetails></ArtViewDetails>
                 </Protected>,
-                loader: ({params}) => fetch (`http://localhost:5000/artView/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/artView/${params.id}`)
+            }, {
+                path: '/my',
+                element: <Protected>
+                    <MyArtAndCraftList></MyArtAndCraftList>
+                </Protected>,
+              
             }
 
         ]

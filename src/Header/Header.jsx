@@ -28,7 +28,7 @@ const Header = () => {
                     backgroundColor: isActive ? "green" : "",
                 };
             }}>Add Craft Item</NavLink></li>
-        <li><NavLink to="list" style={({ isActive }) => {
+        <li><NavLink to="my" style={({ isActive }) => {
             return {
                 fontWeight: isActive ? "bold" : "",
                 backgroundColor: isActive ? "green" : "",

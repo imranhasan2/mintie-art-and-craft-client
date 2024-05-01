@@ -24,10 +24,22 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result.user)
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Login SuccessFully',
+                    icon: 'Success',
+                    confirmButtonText: 'ok'
+                })
 
             })
             .catch(error => {
                 console.error(error)
+                Swal.fire({
+                    title: 'error',
+                    text: 'provide a valid email and pass',
+                    icon: 'error',
+                    confirmButtonText: 'ok'
+                })
             })
     }
 
