@@ -9,7 +9,7 @@ const ArtViewDetails = () => {
     return (
         <div className="flex justify-center items-center h-screen bg-base-200 font-serif">
             <div className="flex flex-col lg:flex-row bg-white p-8 rounded-lg shadow-xl">
-                <img src={image} alt={itemName} className="max-w-sm rounded-lg shadow-2xl mb-4 lg:mb-0 lg:mr-8" />
+                <img src={image}  className="max-w-sm h-[350px] rounded-lg shadow-2xl mb-4 lg:mb-0 lg:mr-8" />
                 <div className="flex flex-col justify-center">
                     <h1 className="text-3xl lg:text-5xl font-bold mb-4 text-gray-800">{itemName}</h1>
                     <p className="text-gray-600 mb-2">{subcategoryName}</p>

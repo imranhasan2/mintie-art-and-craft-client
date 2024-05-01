@@ -14,9 +14,9 @@ const MyartCraft = ({ item }) => {
                     <div className="card-body">
                         <h2 className="card-title">
                             {itemName}
-                            <div className="badge badge-secondary">{subcategoryName}</div>
+                            <div className="badge badge-secondary py-4">{subcategoryName}</div>
                         </h2>
-                        <p>{Short_description.slice(0,20)}</p>
+                        <p>{Short_description.slice(0,50)}</p>
                         <div className="card-actions justify-end">
                             <div className="badge badge-outline">Fashion</div>
                             <div className="badge badge-outline">Products</div>
