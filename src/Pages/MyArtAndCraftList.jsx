@@ -2,12 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { MdOutlineSystemSecurityUpdateGood } from "react-icons/md";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyArtAndCraftList = () => {
 
     const { user } = useContext(AuthContext)
     const [items, setItem] = useState([])
-    const [selectedCustomization,setSelectedCustomization] = useState('')
+    const [selectedCustomization, setSelectedCustomization] = useState('')
 
     useEffect(() => {
         fetch(`http://localhost:5000/my/${user?.email}`)
@@ -21,18 +23,58 @@ const MyArtAndCraftList = () => {
         console.log(itemId)
     };
 
+
+
+
     const handleDelete = (itemId) => {
         console.log(itemId)
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed > 0) {
+
+                fetch(`http://localhost:5000/my/${itemId}`,{
+                    method:"DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        setItem(items.filter(item => item._id !== itemId));
+                        console.log(data)
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your item has been deleted deleted.",
+                            icon: "success"
+
+
+
+                        });
+                    })
+
+
+
+            }
+        });
+
+
+
+
     };
 
 
-const handleCustomizationFilterChange =(e) =>{
-    setSelectedCustomization (e.target.value)
-}
+    const handleCustomizationFilterChange = (e) => {
+        setSelectedCustomization(e.target.value)
+    }
 
 
 
-const filterCustomize = selectedCustomization ? items.filter(item => item.Customization === selectedCustomization) : items
+    const filterCustomize = selectedCustomization ? items.filter(item => item.Customization === selectedCustomization) : items
 
 
     return (
@@ -68,8 +110,10 @@ const filterCustomize = selectedCustomization ? items.filter(item => item.Custom
                                 </div>
                             </div>
                             <div className="flex justify-end mt-4 space-x-4">
-                                <button className="btn btn-primary" onClick={() => handleUpdate(item._id)}> <MdOutlineSystemSecurityUpdateGood size={24} /> Update</button>
-                                <button className="btn btn-danger" onClick={() => handleDelete(item._id)}> <RiDeleteBinLine size={24} />  Delete</button>
+                                <Link to="/update">
+                                    <button className="btn btn-primary" onClick={() => handleUpdate(item._id)}> <MdOutlineSystemSecurityUpdateGood size={24} /> Update</button>
+                                </Link>
+                                <button className="btn btn-danger bg-orange-500" onClick={() => handleDelete(item._id)}> <RiDeleteBinLine size={24} />  Delete</button>
                             </div>
                         </div>
                     </div>

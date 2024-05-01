@@ -13,6 +13,7 @@ import Protected from "../Protected/Protected";
 import AllArtAndCraftItem from "../Pages/AllArtAndCraftItem";
 import ArtViewDetails from "../Pages/ArtViewDetails";
 import MyArtAndCraftList from "../Pages/MyArtAndCraftList";
+import Update from "../Pages/Update";
 
 
 
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
                     <MyArtAndCraftList></MyArtAndCraftList>
                 </Protected>,
               
+            },{
+                path: '/update',
+                element:<Protected>
+                    <Update></Update>
+                </Protected>
             }
 
         ]

@@ -20,7 +20,7 @@ const Homes = () => {
                 </h2>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 mt-8 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mt-8 gap-3">
                 {loadedCrafts.map(craft => <CraftCard key={craft._id} craft={craft}></CraftCard>).slice(0, 6)}
             </div>
             
