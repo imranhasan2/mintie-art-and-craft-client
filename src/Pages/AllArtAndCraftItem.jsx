@@ -20,7 +20,7 @@ const AllArtAndCraftItem = () => {
 
 
     return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto mt-10 mb-10">
             <table className="min-w-full divide-y divide-gray-200 shadow-md">
                 <thead className="bg-gray-50">
                     <tr>

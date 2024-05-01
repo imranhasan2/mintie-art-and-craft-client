@@ -7,7 +7,7 @@ const ArtViewDetails = () => {
 
     const { image, itemName, subcategoryName, Short_description, Price, Rating, Customization, processing_time, Stock_Status,  } = loadData
     return (
-        <div className="flex justify-center items-center h-screen bg-base-200 font-serif">
+        <div className="flex justify-center items-center bg-base-200 font-serif mt-10 mb-10">
             <div className="flex flex-col lg:flex-row bg-white p-8 rounded-lg shadow-xl">
                 <img src={image}  className="max-w-sm h-[350px] rounded-lg shadow-2xl mb-4 lg:mb-0 lg:mr-8" />
                 <div className="flex flex-col justify-center">
