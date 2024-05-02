@@ -4,12 +4,15 @@ import { signInWithPopup } from "firebase/auth";
 import auth from "../Firebase/firebase.config";
 import Swal from "sweetalert2";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate, } from "react-router-dom";
 
 
 const Login = () => {
 
     const { signIn, } = useContext(AuthContext);
+    const location = useLocation()
+    const navigate =useNavigate()
+
     const googleProvider = new GoogleAuthProvider;
     const githubProvider = new GithubAuthProvider;
 
@@ -23,6 +26,11 @@ const Login = () => {
 
         signIn(email, password)
             .then(result => {
+
+
+                navigate( location?.state ? location.state : '/')
+
+
                 console.log(result.user)
                 Swal.fire({
                     title: 'Success!',
@@ -45,37 +53,37 @@ const Login = () => {
 
     const handleGoogleSignIn = (e) => {
         e.preventDefault()
-        signInWithPopup(auth,googleProvider)
-        .then(result =>{
-            console.log(result.user);
-            Swal.fire({
-                title: 'Success!',
-                text: 'Login SuccessFully',
-                icon: 'Success',
-                confirmButtonText: 'ok'
+        signInWithPopup(auth, googleProvider)
+            .then(result => {
+                console.log(result.user);
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Login SuccessFully',
+                    icon: 'Success',
+                    confirmButtonText: 'ok'
+                })
             })
-        })
-        .catch(error =>{
-            console.log(error)
-        })
+            .catch(error => {
+                console.log(error)
+            })
 
     }
 
     const handleGithubSignIn = (e) => {
         e.preventDefault()
-        signInWithPopup(auth,githubProvider)
-        .then(result =>{
-            console.log(result.user);
-            Swal.fire({
-                title: 'Success',
-                text: 'Login SuccessFully',
-                icon: 'Success',
-                confirmButtonText: 'ok'
+        signInWithPopup(auth, githubProvider)
+            .then(result => {
+                console.log(result.user);
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Login SuccessFully',
+                    icon: 'Success',
+                    confirmButtonText: 'ok'
+                })
             })
-        })
-        .catch(error =>{
-            console.log(error)
-        })
+            .catch(error => {
+                console.log(error)
+            })
 
     }
 
