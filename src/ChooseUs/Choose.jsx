@@ -1,10 +1,25 @@
+import { Typewriter } from "react-simple-typewriter";
 
 
 const Choose = () => {
     return (
         <div className="bg-amber-200 mt-10 p-8 rounded-lg min-h-[550px] mb-5">
             <div className="text-center">
-                <h1 className="text-2xl font-bold mb-4">Why Choose Us</h1>
+                <h1 className="text-2xl font-bold mb-4">
+                    <span style={{ color: '#6B7280', fontWeight: 'bold' }}> {/* Gray color */}
+                        {/* Style will be inherited from the parent element */}
+                        <Typewriter
+                            words={['Why Choose Us !!']}
+                            loop={5}
+                            cursor
+                            cursorStyle='_'
+                            typeSpeed={70}
+                            deleteSpeed={50}
+                            delaySpeed={1000}
+                        />
+                    </span>
+                </h1>
+
                 <p className="text-gray-600">WE CURATE INSPIRATION FOR THE HOME, CONNECTING THE <br /> CREATIVE WORK OF ARTISANS & DESIGNERS TO PEOPLE <br /> AND PLACES AROUND THE WORLD</p>
             </div>
             <div className="flex justify-between mt-8">
