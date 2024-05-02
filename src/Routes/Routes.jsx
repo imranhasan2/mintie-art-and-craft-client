@@ -14,6 +14,7 @@ import AllArtAndCraftItem from "../Pages/AllArtAndCraftItem";
 import ArtViewDetails from "../Pages/ArtViewDetails";
 import MyArtAndCraftList from "../Pages/MyArtAndCraftList";
 import Update from "../Pages/Update";
+import ErrorPage from "../Pages/ErrorPage";
 
 
 
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
