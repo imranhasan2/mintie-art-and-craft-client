@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 const MyArtAndCraftList = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user,loading} = useContext(AuthContext)
     const [items, setItem] = useState([])
     const [selectedCustomization, setSelectedCustomization] = useState('')
 
@@ -15,13 +15,11 @@ const MyArtAndCraftList = () => {
         fetch(`http://localhost:5000/my/${user?.email}`)
             .then(res => res.json())
             .then(data => {
+
                 setItem(data)
             })
     }, [user])
 
-    const handleUpdate = (itemId) => {
-        console.log(itemId)
-    };
 
 
 
@@ -40,8 +38,8 @@ const MyArtAndCraftList = () => {
         }).then((result) => {
             if (result.isConfirmed > 0) {
 
-                fetch(`http://localhost:5000/my/${itemId}`,{
-                    method:"DELETE"
+                fetch(`http://localhost:5000/my/${itemId}`, {
+                    method: "DELETE"
                 })
                     .then(res => res.json())
                     .then(data => {
@@ -80,7 +78,7 @@ const MyArtAndCraftList = () => {
     return (
 
         <div>
-
+            
             <div className="flex justify-center mb-6">
                 <select
                     className="form-select w-64 p-2"

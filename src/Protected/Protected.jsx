@@ -6,11 +6,11 @@ import { Navigate } from "react-router-dom";
 const Protected = ({ children }) => {
 
 
-    const { user,loading } = useContext(AuthContext)
+    const { user,loader } = useContext(AuthContext)
 
 
-    if(loading){
-        return <span className="loading loading-spinner loading-lg"></span>
+    if(loader){
+        return <span className="loading loading-spinner loading-lg mt-5 mb-5 "></span>
     }
 
     if (user) {

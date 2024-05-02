@@ -6,6 +6,8 @@ import Swal from "sweetalert2";
 
 const Update = () => {
 
+   
+
     const loadData =useLoaderData()
     console.log(loadData)
 
