@@ -110,8 +110,8 @@ const MyArtAndCraftList = () => {
                                 </div>
                             </div>
                             <div className="flex justify-end mt-4 space-x-4">
-                                <Link to="/update">
-                                    <button className="btn btn-primary" onClick={() => handleUpdate(item._id)}> <MdOutlineSystemSecurityUpdateGood size={24} /> Update</button>
+                                <Link to={`/update/${item._id}`}>
+                                    <button className="btn btn-primary"><MdOutlineSystemSecurityUpdateGood size={24} /> Update</button>
                                 </Link>
                                 <button className="btn btn-danger bg-orange-500" onClick={() => handleDelete(item._id)}> <RiDeleteBinLine size={24} />  Delete</button>
                             </div>
