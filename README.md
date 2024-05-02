@@ -1,8 +1,13 @@
-# React + Vite
+Website Name: Mintie Art and Craft
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Site URL: [Your Live Site URL Here]
 
-Currently, two official plugins are available:
+Category: Arts and Crafts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features:
+
+- Explore our Craft section to discover a diverse collection of handmade craft items.
+- Check out our New Arrivals section for the latest additions to our inventory.
+- Learn why you should choose Mintie Art and Craft with our compelling Why Choose Us section.
+- Enjoy a seamless browsing experience with intuitive navigation and user-friendly design.
+- Join our vibrant community of art enthusiasts and creators to share inspiration and ideas.

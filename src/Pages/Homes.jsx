@@ -6,7 +6,7 @@ import NewArrival from "../ExtraSection/NewArrival";
 import Choose from "../ChooseUs/Choose";
 import { Typewriter } from "react-simple-typewriter";
 
-
+import { Fade, Slide } from "react-awesome-reveal";
 
 
 
@@ -29,11 +29,13 @@ const Homes = () => {
                             delaySpeed={1000}
                         />
                     </span>
-                
+
                 </h1>
-                <p className="text-gray-400 font-medium mt-5">Discover a world of creativity with our collection <br />
-                    of artisanal craft items. From handmade pottery to intricately woven textiles,<br />
-                    each piece tells a unique story crafted with passion and skill.</p>
+                <Slide>
+                    <p className="text-gray-400 font-medium mt-5">Discover a world of creativity with our collection <br />
+                        of artisanal craft items. From handmade pottery to intricately woven textiles,<br />
+                        each piece tells a unique story crafted with passion and skill.</p>
+                </Slide>
 
             </div>
 

@@ -1,3 +1,4 @@
+import { Slide } from "react-awesome-reveal";
 import { Typewriter } from "react-simple-typewriter";
 
 
@@ -20,7 +21,9 @@ const Choose = () => {
                     </span>
                 </h1>
 
-                <p className="text-gray-600">WE CURATE INSPIRATION FOR THE HOME, CONNECTING THE <br /> CREATIVE WORK OF ARTISANS & DESIGNERS TO PEOPLE <br /> AND PLACES AROUND THE WORLD</p>
+                <Slide>
+                    <p className="text-gray-600">WE CURATE INSPIRATION FOR THE HOME, CONNECTING THE <br /> CREATIVE WORK OF ARTISANS & DESIGNERS TO PEOPLE <br /> AND PLACES AROUND THE WORLD</p>
+                </Slide>
             </div>
             <div className="flex justify-between mt-8">
                 <div className="text-center">
