@@ -29,7 +29,7 @@ const AddCraftItem = () => {
         const userItem = { image, itemName, subcategoryName, Short_description, Price, Rating, Customization, processing_time, Stock_Status, email }
 
 
-        fetch('http://localhost:5000/item', {
+        fetch('https://mintie-art-and-craft-server.vercel.app/item', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

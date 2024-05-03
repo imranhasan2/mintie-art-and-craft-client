@@ -40,7 +40,7 @@ const Update = () => {
         const updateItem = {_id, image, itemName, subcategoryName, Short_description, Price, Rating, Customization, processing_time, Stock_Status, }
 
 
-        fetch(`http://localhost:5000/update/${_id}`, {
+        fetch(`https://mintie-art-and-craft-server.vercel.app/update/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -7,12 +7,12 @@ import Swal from "sweetalert2";
 
 const MyArtAndCraftList = () => {
 
-    const { user,loading} = useContext(AuthContext)
+    const { user,} = useContext(AuthContext)
     const [items, setItem] = useState([])
     const [selectedCustomization, setSelectedCustomization] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/my/${user?.email}`)
+        fetch(`https://mintie-art-and-craft-server.vercel.app/my/${user?.email}`)
             .then(res => res.json())
             .then(data => {
 

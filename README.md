@@ -1,6 +1,6 @@
 Website Name: Mintie Art and Craft
 
-Live Site URL: [Your Live Site URL Here]
+Live Site URL: [https://mintie-art-and-craft.web.app/]
 
 Category: Arts and Crafts
 

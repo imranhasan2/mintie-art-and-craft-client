@@ -28,7 +28,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Homes></Homes>,
-                loader: () => fetch('http://localhost:5000/craft')
+                loader: () => fetch('https://mintie-art-and-craft-server.vercel.app/craft')
 
             },
             {
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             {
                 path: '/viewDetails/:id',
                 element: <ViewDetails></ViewDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/craft/${params.id}`)
+                loader: ({ params }) => fetch(`https://mintie-art-and-craft-server.vercel.app/craft/${params.id}`)
             }, {
                 path: '/addCraftItem',
                 element: <Protected> <AddCraftItem></AddCraftItem></Protected>
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
                 element: <Protected>
                     <ArtViewDetails></ArtViewDetails>
                 </Protected>,
-                loader: ({ params }) => fetch(`http://localhost:5000/artView/${params.id}`)
+                loader: ({ params }) => fetch(`https://mintie-art-and-craft-server.vercel.app/artView/${params.id}`)
             }, {
                 path: '/my',
                 element: <Protected>
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
                 element:<Protected>
                     <Update></Update>
                 </Protected>,
-                loader: ( {params} ) => fetch(`http://localhost:5000/update/${params.id}`)
+                loader: ( {params} ) => fetch(`https://mintie-art-and-craft-server.vercel.app/update/${params.id}`)
             }
 
         ]

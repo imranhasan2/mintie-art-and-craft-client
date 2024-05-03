@@ -10,7 +10,7 @@ const AllArtAndCraftItem = () => {
     const [item, setItem] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/art/${user?.email}`)
+        fetch(`https://mintie-art-and-craft-server.vercel.app/art/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data)
